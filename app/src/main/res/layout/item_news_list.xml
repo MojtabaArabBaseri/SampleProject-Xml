@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/clMain"
+        style="@style/BackgroundRowStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/size_radius_card_view"
+        app:cardElevation="0dp"
+        app:rippleColor="@color/whiteColor">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/spacing_4x">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imvImageNews"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:background="@drawable/bg_primary_medium_radius"
+                android:clipToOutline="true"
+                android:scaleType="centerCrop"
+                app:layout_constraintDimensionRatio="H,21:9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@mipmap/image_user" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblTitle"
+                style="@style/TextView.IranSansNormalEnglishNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_2x"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:lineSpacingExtra="@dimen/spacing_base"
+                android:maxLines="2"
+                android:text="Air Travel Returned. So Did Long Lines at Security, Restaurants and Shops."
+                android:textColor="?android:textColorPrimary"
+                android:textSize="@dimen/size_font_title3"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imvImageNews" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblAuther"
+                style="@style/TextView.IranSansNormalEnglishNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_2x"
+                android:layout_marginEnd="@dimen/spacing_4x"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Alison Sider"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/body_size_font"
+                app:layout_constrainedWidth="true"
+                app:layout_constraintEnd_toStartOf="@+id/lblPublishAt"
+                app:layout_constraintHorizontal_bias="0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblTitle" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblPublishAt"
+                style="@style/TextView.IranSansNormalEnglishNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_2x"
+                android:text="June 18, 2021 9:12 am ET"
+                android:textColor="@color/colorSecondaryText"
+                android:textSize="@dimen/body_size_font"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lblTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

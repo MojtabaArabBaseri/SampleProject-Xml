@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">Millennium</string>
+    <string name="title_application">Millennium</string>
+    <string name="description_application">Millennium Data Processing Group</string>
+    <string name="copyright">Developed by Mojtaba Arab Baseri</string>
+    <string name="login">Login</string>
+    <string name="user_name">User Name: Mojtaba</string>
+    <string name="password">Password: 123456</string>
+    <string name="message_when_user_exit_application">Click Again To Exit The Application</string>
+    <string name="message_when_username_password_incorrect">User Name Or Password Incorrect</string>
+    <string name="please_enter_user_name">Please Enter User Name</string>
+    <string name="please_enter_password">Please Enter Password</string>
+    <string name="profile">Profile</string>
+    <string name="detail_news">Detail News</string>
+    <string name="news">News</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="attention">Attention</string>
+    <string name="change_language">Change Languge</string>
+    <string name="message_change_language">Do you want to change language to Persion?</string>
+
+    <string name="link_github">https://github.com/mojtabaarabbaseri</string>
+    <string name="link_gitlab">https://gitlab.com/mojtabaarabbaseri</string>
+    <string name="link_inkedin">https://www.linkedin.com/in/mojtaba-arabbaseri-003343b0</string>
+    <string name="link_telegram">https://t.me/MojtabaArabBaseri</string>
+    <string name="link_instagram">https://instagram.com/mojtaba.arab.baseri?igshid=ZGUzMzM3NWJiOQ==</string>
+    <string name="link_whatsapp">https://wa.me/qr/NR2XYU3L3SLQD1</string>
+
+    <string name="full_name">Mojtaba Arab Baseri</string>
+    <string name="github">Github</string>
+    <string name="gitlab">Gitlab</string>
+    <string name="linkedin">Linkedin</string>
+    <string name="telegram">Telegram</string>
+    <string name="whatsapp">WhatsApp</string>
+    <string name="instagram">Instagram</string>
+    <string name="aboutMe">About Me</string>
+    <string name="about_me_detail">Hi.\nI am Mojtaba Arab Baseri.\nI Experienced Android developer
+        with more than six years of expertise in building diverse applications. Proficient in Java, Kotlin,
+        Coroutines, Flow, Android SDK, MVVM Architecture, Hilt, Rest API, Room, XML, Git,
+        and third-party libraries for stable UIs. Skilled in Agile project management.</string>
+
+</resources>

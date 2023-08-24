@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="@color/whiteColor"
+    app:cardCornerRadius="@dimen/size_radius_card_view"
+    app:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="24dp">
+
+        <ImageView
+            android:id="@+id/imvAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_alert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lblTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/attention"
+            android:textColor="#272343"
+            android:textSize="@dimen/size_font_title3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imvAlert" />
+
+        <TextView
+            android:id="@+id/lblMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/lblTitle"
+            android:layout_marginLeft="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginRight="16dp"
+            android:elevation="0dp"
+            android:gravity="start"
+            android:text="@string/message_change_language"
+            android:textColor="#272343"
+            android:textSize="@dimen/size_font_title3"
+            app:elevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblTitle" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnSkip"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/whiteColor"
+            android:elevation="0dp"
+            android:minWidth="@dimen/min_width_button_view"
+            android:minHeight="@dimen/min_height_textView"
+            android:padding="0dp"
+            android:text="@string/no"
+            android:textColor="@color/colorPrimary"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lblMessage"
+            app:rippleColor="@color/colorHalfTransparentPrimary"
+            app:strokeColor="@color/whiteColor"
+            app:strokeWidth="0dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnOk"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="12dp"
+            android:backgroundTint="@color/whiteColor"
+            android:elevation="0dp"
+            android:minWidth="@dimen/min_width_button_view"
+            android:minHeight="@dimen/min_height_textView"
+            android:padding="0dp"
+            android:text="@string/yes"
+            android:textColor="@color/colorPrimary"
+            app:elevation="0dp"
+            app:layout_constraintEnd_toStartOf="@+id/btnSkip"
+            app:layout_constraintTop_toBottomOf="@+id/lblMessage"
+            app:rippleColor="@color/colorHalfTransparentPrimary"
+            app:strokeColor="@color/whiteColor"
+            app:strokeWidth="0dp" />
+
+        <ProgressBar
+            android:id="@+id/pbLoading"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="73dp"
+            android:layout_marginEnd="57dp"
+            android:visibility="gone"
+            app:layout_constraintEnd_toStartOf="@+id/btnSkip"
+            app:layout_constraintTop_toBottomOf="@+id/lblMessage" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

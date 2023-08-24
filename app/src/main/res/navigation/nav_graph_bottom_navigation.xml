@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph_bottom_navigation"
+    app:startDestination="@id/aboutMeFragment">
+
+    <fragment
+        android:id="@+id/aboutMeFragment"
+        android:name="ir.millennium.sampleProject.presentation.fragments.aboutMeScreen.AboutMeFragment"
+        android:label="AboutMeFragment" />
+
+    <fragment
+        android:id="@+id/newsListFragment"
+        android:name="ir.millennium.sampleProject.presentation.fragments.newsScreent.NewsListFragment"
+        android:label="NewsListFragment" />
+
+</navigation>

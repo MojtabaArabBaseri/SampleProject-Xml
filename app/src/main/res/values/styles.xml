@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="TextView">
+        <!--        <item name="android:textColor">@color/colorPrimaryText</item>-->
+        <item name="android:lineSpacingExtra">@dimen/spacing_2x</item>
+        <!--        <item name="android:textAlignment">textStart</item>-->
+    </style>
+
+    <style name="TextView.IranSansNormalPersionNumber">
+        <item name="fontFamily">@font/iran_sans</item>
+    </style>
+
+    <style name="TextView.IranSansBoldPersionNumber">
+        <item name="fontFamily">@font/iransans_bold</item>
+    </style>
+
+    <style name="TextView.IranSansNormalEnglishNumber">
+        <item name="fontFamily">@font/iran_sans_english_number</item>
+    </style>
+
+    <style name="ProgressBar" parent="android:Widget.Material.Light.ProgressBar.Small.Inverse">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:indeterminateTint">?colorPrimary</item>
+    </style>
+
+</resources>

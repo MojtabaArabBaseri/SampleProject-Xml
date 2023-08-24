@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <dimen name="size_font_title1">18dp</dimen>
+    <dimen name="size_font_title2">17dp</dimen>
+    <dimen name="size_font_title3">14dp</dimen>
+    <dimen name="body_size_font">13dp</dimen>
+    <dimen name="small_size_font">11dp</dimen>
+    <dimen name="very_small_size_font">9dp</dimen>
+
+    <dimen name="max_height_editText">55dp</dimen>
+    <dimen name="min_height_editText">48dp</dimen>
+    <dimen name="min_height_textView">33dp</dimen>
+    <dimen name="min_height_button_view">60dp</dimen>
+    <dimen name="min_width_button_view">56dp</dimen>
+    <dimen name="size_margin_editText_from_side">90dp</dimen>
+    <dimen name="min_height_toolbar">64dp</dimen>
+
+    <dimen name="size_title_button">14dp</dimen>
+    <dimen name="size_height_button">48dp</dimen>
+    <dimen name="size_radius_button">28dp</dimen>
+    <dimen name="size_radius_card_view">10dp</dimen>
+    <dimen name="size_radius_editText">10dp</dimen>
+    <dimen name="size_rediues_dialog_Fragment">20dp</dimen>
+    <dimen name="size_stroke_width_button">1.5dp</dimen>
+
+    <dimen name="design_bottom_navigation_text_size" tools:override="true">12dp</dimen>
+    <dimen name="design_bottom_navigation_active_text_size" tools:override="true">14dp</dimen>
+    <dimen name="design_navigation_icon_padding" tools:override="true">16dp</dimen>
+
+    <!--    <dimen name="bottom_navigation_icon_size" tools:override="true">42dp</dimen>-->
+    <!--    <dimen name="design_bottom_navigation_height" tools:override="true">60dp</dimen>-->
+
+
+    <dimen name="space_logo_from_top">100dp</dimen>
+    <dimen name="space_lblMobile_from_logo">30dp</dimen>
+    <dimen name="space_btn_regiter_from_lbl_mobile">140dp</dimen>
+
+    <dimen name="space_logo_from_top_register_code">88dp</dimen>
+    <dimen name="space_lbl_wrong_number_from_lbl_timer">40dp</dimen>
+    <dimen name="space_btn_regiter_code_from_lbl_wrong_number">50dp</dimen>
+
+    <dimen name="space_btn_regiter_from_lbl_family_sign_up">84dp</dimen>
+
+
+    <!-- ***************************** -->
+
+    <dimen name="spacing_zero">0dp</dimen>
+    <dimen name="spacing_base">4dp</dimen>
+    <dimen name="spacing_2x">8dp</dimen>
+    <dimen name="spacing_3x">12dp</dimen>
+    <dimen name="spacing_4x">16dp</dimen>
+    <dimen name="spacing_5x">20dp</dimen>
+    <dimen name="spacing_6x">24dp</dimen>
+    <dimen name="spacing_7x">28dp</dimen>
+    <dimen name="spacing_8x">32dp</dimen>
+    <dimen name="spacing_9x">36dp</dimen>
+    <dimen name="spacing_10x">40dp</dimen>
+    <dimen name="spacing_11x">44dp</dimen>
+    <dimen name="spacing_12x">48dp</dimen>
+    <dimen name="spacing_13x">52dp</dimen>
+    <dimen name="spacing_14x">56dp</dimen>
+    <dimen name="spacing_15x">60dp</dimen>
+    <dimen name="spacing_16x">64dp</dimen>
+    <dimen name="spacing_17x">68dp</dimen>
+    <dimen name="spacing_18x">72dp</dimen>
+    <dimen name="spacing_19x">76dp</dimen>
+    <dimen name="spacing_20x">80dp</dimen>
+
+    <dimen name="divider_height">1dp</dimen>
+    <dimen name="radius_small">2dp</dimen>
+    <dimen name="radius_medium">6dp</dimen>
+    <dimen name="radius_large">24dp</dimen>
+    <dimen name="toolbar_size">52dp</dimen>
+    <dimen name="logo_size_normal">120dp</dimen>
+    <dimen name="logo_size_large">200dp</dimen>
+
+    <dimen name="text_1x">10sp</dimen>
+    <dimen name="text_2x">12sp</dimen>
+    <dimen name="text_3x">14sp</dimen>
+    <dimen name="text_4x">16sp</dimen>
+    <dimen name="text_5x">18sp</dimen>
+    <dimen name="text_6x">20sp</dimen>
+
+
+</resources>

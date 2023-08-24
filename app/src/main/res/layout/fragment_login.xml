@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="HardcodedText,SpUsage,RtlHardcoded,RtlSymmetry,LabelFor">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/clMain"
+        style="@style/BackgroundRootAutenticationPagesStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:layoutDirection="locale">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/lblNameApp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/space_logo_from_top"
+                    android:minHeight="22dp"
+                    android:text="@string/title_application"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="34dp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/lblDescription2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/description_application"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/small_size_font"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lblNameApp" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilUsername"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="@dimen/space_lblMobile_from_logo"
+                    android:layout_marginRight="65dp"
+                    app:counterEnabled="false"
+                    app:errorEnabled="false"
+                    app:hintTextColor="@color/colorPrimary"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/lblDescription2"
+                    app:startIconTint="@color/colorPrimaryText">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextView.IranSansNormalEnglishNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|start"
+                        android:drawableStart="@drawable/ic_mobile"
+                        android:drawablePadding="12dp"
+                        android:gravity="center|start"
+                        android:hint="@string/user_name"
+                        android:inputType="textNoSuggestions"
+                        android:minHeight="@dimen/min_height_editText"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="@dimen/size_font_title3" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilPassword"
+                    style="@style/TextInputLayoutStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="65dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="65dp"
+                    app:counterEnabled="false"
+                    app:errorEnabled="false"
+                    app:hintTextColor="@color/colorPrimary"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tilUsername"
+                    app:startIconTint="@color/colorPrimaryText">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        style="@style/TextView.IranSansNormalEnglishNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center|start"
+                        android:drawableStart="@drawable/ic_code"
+                        android:drawablePadding="12dp"
+                        android:gravity="center|start"
+                        android:hint="@string/password"
+                        android:inputType="textPassword"
+                        android:minHeight="@dimen/min_height_editText"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPrimaryText"
+                        android:textSize="@dimen/size_font_title3" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cvLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/max_height_editText"
+                    android:layout_marginLeft="75dp"
+                    android:layout_marginTop="@dimen/space_btn_regiter_from_lbl_family_sign_up"
+                    android:layout_marginRight="75dp"
+                    android:layout_marginBottom="25dp"
+                    android:background="@color/colorPrimary"
+                    android:backgroundTint="@color/colorPrimary"
+                    android:clickable="true"
+                    android:elevation="6dp"
+                    android:focusable="true"
+                    app:cardCornerRadius="@dimen/size_radius_button"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tilPassword"
+                    app:rippleColor="@color/whiteColor">
+
+                    <TextView
+                        android:id="@+id/lblSignUp"
+                        style="@style/TextView.IranSansBoldPersionNumber"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:textColor="@color/colorPrimaryText"
+                        android:text="@string/login"
+                        android:textSize="@dimen/size_font_title3" />
+
+                    <com.google.android.material.progressindicator.CircularProgressIndicator
+                        android:id="@+id/pbLoading"
+                        style="@style/CircularProgressIndicatorSmall"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:id="@+id/lblCopywrite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom|right"
+                    android:layout_margin="16dp"
+                    android:gravity="right|center_vertical"
+                    android:lineSpacingExtra="6dp"
+                    android:text="@string/copyright"
+                    android:textColor="@color/whiteColor"
+                    android:textSize="@dimen/body_size_font"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</layout>

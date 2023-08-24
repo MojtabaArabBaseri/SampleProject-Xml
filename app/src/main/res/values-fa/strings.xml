@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">هزاره</string>
+    <string name="title_application">هزاره</string>
+    <string name="description_application">گروه داده پردازی هزاره</string>
+    <string name="copyright">طراحی شده توسط مجتبی عرب باصری</string>
+    <string name="login">ورود</string>
+    <string name="user_name">نام کاربری: Mojtaba</string>
+    <string name="password">پسورد: 123456</string>
+    <string name="message_when_user_exit_application">برای خروج از برنامه دوباره کلیک نمایید</string>
+    <string name="message_when_username_password_incorrect">نام کاربری یا پسورد اشتباه است</string>
+    <string name="please_enter_user_name">لطفا نام کاربری را وارد نمایید</string>
+    <string name="please_enter_password">لطفا رمز عبور را وارد نمایید</string>
+
+    <string name="link_github">https://github.com/mojtabaarabbaseri</string>
+    <string name="link_gitlab">https://gitlab.com/mojtabaarabbaseri</string>
+    <string name="link_inkedin">https://www.linkedin.com/in/mojtaba-arabbaseri-003343b0</string>
+    <string name="link_telegram">https://t.me/MojtabaArabBaseri</string>
+    <string name="link_instagram">https://instagram.com/mojtaba.arab.baseri?igshid=ZGUzMzM3NWJiOQ==</string>
+    <string name="link_whatsapp">https://wa.me/qr/NR2XYU3L3SLQD1</string>
+
+    <string name="full_name">مجتبی عرب باصری</string>
+    <string name="github">گیت هاب</string>
+    <string name="gitlab">گیت لب</string>
+    <string name="linkedin">لینکدین</string>
+    <string name="telegram">تلگرام</string>
+    <string name="whatsapp">واتساپ</string>
+    <string name="instagram">اینستاگرام</string>
+    <string name="aboutMe">در مورد من</string>
+
+    <string name="profile">حساب کاربری</string>
+    <string name="detail_news">جزئیات خبر</string>
+    <string name="news">اخبار</string>
+    <string name="yes">بله</string>
+    <string name="no">خیر</string>
+    <string name="attention">اخطار</string>
+    <string name="change_language">تغییر زبان</string>
+    <string name="message_change_language">آیا می خواهید زبان را به انگلیسی تغییر دهید؟</string>
+    <string name="about_me_detail">سلام\nمن مجتبی عرب باصری هستم.\nبرنامه نویس اندروید با بیش از 6 سال تخصص در ساخت اپلیکیشن های متنوع. مسلط به Java, Kotlin, Coroutines, Flow, Android SDK, MVVM Architecture, Hilt, Rest API, Room, XML, Git و کتابخانه های اندروید برای ساخت رابط های کاربری پایدار.</string>
+
+</resources>

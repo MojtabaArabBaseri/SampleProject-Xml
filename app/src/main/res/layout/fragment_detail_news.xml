@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:ignore="SpUsage">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/BackgroundRootStyle"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nsvArticle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            android:paddingTop="50dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/spacing_4x">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivImageNews"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:background="@drawable/bg_primary_medium_radius"
+                    android:clipToOutline="true"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintDimensionRatio="H,21:9"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblTitle"
+                    style="@style/TextView.IranSansBoldPersionNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_2x"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="@dimen/size_font_title3"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/ivImageNews"
+                    tools:text="Air Travel Returned. So Did Long Lines at Security, Restaurants and Shops." />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblAuthor"
+                    style="@style/TextView.IranSansNormalEnglishNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_2x"
+                    android:layout_marginEnd="@dimen/spacing_4x"
+                    android:text="Alison Sider"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="@dimen/body_size_font"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toStartOf="@+id/lblPublishAt"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTitle" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblPublishAt"
+                    style="@style/TextView.IranSansNormalEnglishNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_2x"
+                    android:textColor="@color/colorSecondaryText"
+                    android:textSize="@dimen/body_size_font"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblTitle"
+                    tools:text="June 18, 2021 9:12 am ET" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/lblContent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_4x"
+                    android:lineSpacingExtra="8dp"
+                    android:textColor="?android:textColorPrimary"
+                    android:textSize="@dimen/body_size_font"
+                    app:layout_constrainedWidth="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/lblAuthor"
+                    tools:text="Air Travel Returned. So Did Long Lines at Security, Restaurants and Shops." />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clToolbar"
+            style="@style/BackgroundToolbarStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="?actionBarSize"
+                android:contentInsetStart="0dp"
+                app:contentInsetStartWithNavigation="0dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lblTitleToolbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical|start"
+                android:minHeight="?actionBarSize"
+                android:text="@string/detail_news"
+                android:textColor="?android:textColorPrimary"
+                android:textSize="@dimen/size_font_title3"
+                app:layout_constraintStart_toEndOf="@+id/toolbar"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

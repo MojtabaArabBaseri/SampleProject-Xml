@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <color name="colorPrimaryDark">#00ebc7</color>
+    <color name="colorPrimary">#00ebc7</color>
+    <color name="colorAccent">#ff5470</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="statusBarColor">#AAFFFFFF</color>
+    <color name="whiteColor">#FFFFFF</color>
+    <color name="blackColor">#000000</color>
+    <color name="colorHalfTransparentPrimary">#7F00ebc7</color>
+    <color name="colorCircleStepper">#b2b2b2</color>
+
+    <color name="colorPrimaryText">#00214d</color>
+    <color name="colorButtonText">#00214d</color>
+    <color name="colorSecondaryText">#b2b2b2</color>
+    <color name="colorIcon">#00214d</color>
+    <color name="colorBackgroundMain">#FFFFFE</color>
+    <color name="colorBackgroundEditText">#f5f5f5</color>
+
+    <color name="colorBackgroundRow">#f4f9f9</color>
+
+    <color name="colorLogoText">#2d334a</color>
+    <color name="orangeColor">#ff8906</color>
+    <color name="orangeSemiColor">#ffb96b</color>
+    <color name="redColor">#e53170</color>
+    <color name="bottomNavigationColor">#E6F5F5F5</color>
+    <color name="backgroundChip">#AAFFFFFF</color>
+
+    <color name="design_snackbar_background_color" tools:override="true">@color/transparent</color>
+
+
+    //-------------Color For Change Theme
+
+    <color name="backgroundMainColorLightTheme">#FFFFFE</color>
+    <color name="backgroundMainColorDarkTheme">#000000</color>
+
+    <color name="backgroundToolbarColorLightTheme">#AFFFFFFE</color>
+    <color name="backgroundToolbarColorDarkTheme">#AF000000</color>
+
+    <color name="primaryTextColorLightTheme">#00214d</color>
+    <color name="primaryTextColorDarkTheme">#FFFFFF</color>
+
+    <color name="backgroundRowColorLightTheme">#f4f9f9</color>
+    <color name="backgroundRowColorDarkTheme">#FF070707</color>
+
+    <color name="backgroundChipColorLightTheme">#FFFFFF</color>
+    <color name="backgroundChipColorDarkTheme">#000000</color>
+
+    <color name="navigationBottomSelectedColor">#ff5470</color>
+    <color name="navigationBottomUnSelectedLightColor">#1b2d45</color>
+    <color name="navigationBottomUnSelectedDarkColor">#FFFFFF</color>
+
+    <color name="checkedButtonSelectedColor">#00ebc7</color>
+    <color name="checkedButtonUnSelectedLightColor">#1b2d45</color>
+    <color name="checkedButtonUnSelectedDarkColor">#FFFFFF</color>
+
+    <color name="backgroundStatusbarColorLightTheme">#AAFFFFFF</color>
+    <color name="backgroundStatusbarColorDarkTheme">#000000</color>
+    <color name="backgroundStatusbarColorForAuthenticationScreenDarkTheme">#AA000000</color>
+
+</resources>

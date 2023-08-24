@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_main"
+    app:startDestination="@id/navigationAboutMeFragment"
+    tools:ignore="InvalidNavigation">
+
+    <fragment
+        android:id="@+id/navigationAboutMeFragment"
+        android:name="ir.millennium.sampleProject.presentation.fragments.aboutMeScreen.AboutMeFragment"
+        android:label="AboutMeFragment">
+
+        <action
+            android:id="@+id/action_navigationAboutMeFragment_to_navigationAboutMeDialog"
+            app:destination="@id/navigationAboutMeDialog"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+
+    </fragment>
+
+    <dialog
+        android:id="@+id/navigationAboutMeDialog"
+        android:name="ir.millennium.sampleProject.presentation.dialog.AboutMeDialog"
+        android:label="AboutMeDialog">
+
+    </dialog>
+
+
+    <fragment
+        android:id="@+id/navigationNewsListFragment"
+        android:name="ir.millennium.sampleProject.presentation.fragments.newsScreent.NewsListFragment"
+        android:label="NewsListFragment">
+
+        <action
+            android:id="@+id/action_newsListFragment_to_detailNewsFragmentFragment"
+            app:destination="@id/detailNewsFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/fade_in"
+            app:popExitAnim="@anim/fade_out" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/detailNewsFragment"
+        android:name="ir.millennium.sampleProject.presentation.fragments.detailNewsScreen.DetailNewsFragment"
+        android:label="DetailNewsFragment">
+
+        <argument
+            android:name="newsItem"
+            app:argType="ir.millennium.sampleProject.data.model.remote.NewsItem"
+            app:nullable="true" />
+    </fragment>
+
+</navigation>
