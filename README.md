@@ -4,7 +4,7 @@ Everything you need to start a modern, scalable and robust android project.
 you got everything you need to get started , no more fundamental setup , boring primary
 configuration and boilerplates.
 
-![introduce_app](introduceApp/introduce_app.gif)
+![introduce_app](app/src/main/assets/introduce_app.gif)
 
 This Android project template is built using the following technologies:
 
