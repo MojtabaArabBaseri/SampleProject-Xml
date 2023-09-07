@@ -18,8 +18,7 @@ import org.junit.Assert.*
 class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
-        // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("ir.millennium.samat", appContext.packageName)
+        assertEquals("ir.millennium.sampleProject", appContext.packageName)
     }
 }
