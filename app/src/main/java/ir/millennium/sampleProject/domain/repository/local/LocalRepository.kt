@@ -1,12 +1,12 @@
 package ir.millennium.sampleProject.domain.repository.local
 
-import ir.millennium.sampleProject.data.model.local.formUnregistered.FormUnRegisteredModel
+import ir.millennium.sampleProject.data.model.local.formUnregistered.NewsModel
 
 interface LocalRepository {
 
-    suspend fun getFormUnRegistredList(): List<FormUnRegisteredModel>
+    suspend fun getNewsList(): List<NewsModel>
 
-    suspend fun saveToDatabaseFormUnRegistered(formUnRegisteredModel: FormUnRegisteredModel)
+    suspend fun saveToDatabaseNews(newsModel: NewsModel)
 
     fun clearDatabase()
 

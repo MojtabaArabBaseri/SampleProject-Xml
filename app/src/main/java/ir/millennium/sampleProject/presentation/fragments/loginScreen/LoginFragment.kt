@@ -30,7 +30,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class LoginFragment : BaseFragment<FragmentLoginBinding>() {
+open class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
     private lateinit var adapterUniversity: ArrayAdapter<*>
 
@@ -42,13 +42,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setlanguage()
+        setLanguage()
         initTextView()
         initEditText()
         initLayout()
     }
 
-    internal fun setlanguage() = with(binding) {
+    internal fun setLanguage() = with(binding) {
         if (language == "en") {
             tilPassword.typeface = auxiliaryFunctionsManager.getTypefaceIranSansEnglish(context)
         } else {
@@ -77,8 +77,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
                 if (editable.isNotEmpty()) {
                     tilUsername.error = null
                 }
-
-                tilUsername.typeface = auxiliaryFunctionsManager.getTypefaceIranSansPersian(context)
+                setLanguage()
             }
         })
 
@@ -90,15 +89,23 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
                 if (editable.isNotEmpty()) {
                     tilPassword.error = null
                 }
-                setlanguage()
+                setLanguage()
             }
         })
     }
 
     private fun initLayout() = with(binding) {
         cvLogin.setOnClickListener {
-            if (checkField()) {
-                if (checkAuthentication()) {
+            if (checkFieldForValidation(
+                    tilUsername.editText?.text.toString().trim { it <= ' ' },
+                    tilPassword.editText?.text.toString().trim { it <= ' ' }
+                )
+            ) {
+                if (checkAuthentication(
+                        binding.tilUsername.editText?.text.toString().lowercase(),
+                        binding.tilPassword.editText?.text.toString()
+                    )
+                ) {
                     hideKeyboard()
                     pbLoading.setVisible()
                     cvLogin.setDisable()
@@ -116,33 +123,25 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         }
     }
 
-    private fun checkField(): Boolean = with(binding) {
-        var statusField = true
+    fun checkFieldForValidation(userName: String, password: String): Boolean {
+        var statusValidation = true
 
-        if (tilUsername.editText?.text.toString().trim { it <= ' ' }.isEmpty()) {
-            tilUsername.error = resources.getString(R.string.please_enter_user_name)
-            statusField = false
-        } else {
-            tilUsername.error = null
+        if (userName.isEmpty()) {
+            binding.tilUsername.error = resources.getString(R.string.please_enter_user_name)
+            statusValidation = false
         }
 
-        if (tilPassword.editText?.text.toString().trim { it <= ' ' }.isEmpty()) {
-            tilPassword.error = resources.getString(R.string.please_enter_password)
-            statusField = false
-        } else {
-            tilPassword.error = null
+        if (password.isEmpty()) {
+            binding.tilPassword.error = resources.getString(R.string.please_enter_password)
+            statusValidation = false
         }
 
-        setlanguage()
-
-        return statusField
+        return statusValidation
     }
 
-    private fun checkAuthentication(): Boolean {
+    fun checkAuthentication(userName: String, password: String): Boolean {
 
-        return if (binding.tilUsername.editText?.text.toString().lowercase() == USER_NAME
-            && binding.tilPassword.editText?.text.toString().lowercase() == PASSWORD
-        ) {
+        return if (userName == USER_NAME && password == PASSWORD) {
             true
         } else {
             Snackbar.make(
