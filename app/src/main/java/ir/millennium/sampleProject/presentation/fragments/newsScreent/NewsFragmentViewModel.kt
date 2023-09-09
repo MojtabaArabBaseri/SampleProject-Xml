@@ -41,6 +41,7 @@ class NewsFragmentViewModel @Inject constructor(
 
     fun getNews() {
         params.replace("page", _currentPage)
+
         getNewsUseCase.getNews(params)
             .flowOn(Dispatchers.IO)
             .map { newsList ->
@@ -63,6 +64,6 @@ class NewsFragmentViewModel @Inject constructor(
 
     fun getNextPage() {
         _currentPage++
-        getNews()
+//        getNews()
     }
 }

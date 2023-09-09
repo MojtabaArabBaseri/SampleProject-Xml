@@ -67,7 +67,6 @@ class LoginFragmentTest {
             val actual = checkFieldForValidation(userName, password)
             assertFalse(actual)
         }
-
     }
 
     @Test
