@@ -34,8 +34,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
     private lateinit var adapterUniversity: ArrayAdapter<*>
 
-    private val viewModel: LoginFragmentViewModel by viewModels()
-
     private val language by lazy { sharedPreferencesManager.getLanguageApp() }
 
     override val layoutId: Int
