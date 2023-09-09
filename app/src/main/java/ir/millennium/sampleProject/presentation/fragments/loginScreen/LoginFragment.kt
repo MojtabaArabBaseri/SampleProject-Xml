@@ -32,8 +32,6 @@ import kotlinx.coroutines.launch
 @AndroidEntryPoint
 open class LoginFragment : BaseFragment<FragmentLoginBinding>() {
 
-    private lateinit var adapterUniversity: ArrayAdapter<*>
-
     private val language by lazy { sharedPreferencesManager.getLanguageApp() }
 
     override val layoutId: Int
