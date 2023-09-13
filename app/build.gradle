@@ -172,11 +172,13 @@ dependencies {
     debugImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.7.2"
     debugImplementation "com.google.truth:truth:1.1.2"
     debugImplementation "org.mockito:mockito-core:3.10.0"
+    debugImplementation 'org.mockito.kotlin:mockito-kotlin:3.2.0'
     debugImplementation "org.junit.jupiter:junit-jupiter-api:5.9.3"
     debugImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
     testRuntimeOnly "org.junit.jupiter:junit-jupiter-engine:5.9.3"
     debugImplementation "org.junit.jupiter:junit-jupiter-params:5.9.3"
     debugImplementation "androidx.fragment:fragment-testing:1.6.0"
+    testImplementation 'org.mockito:mockito-inline:2.13.0'
 
 //    // Instrumented Unit Tests
     androidTestImplementation "junit:junit:4.13.2"

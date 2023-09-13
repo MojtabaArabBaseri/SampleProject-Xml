@@ -14,12 +14,11 @@ import dagger.hilt.android.AndroidEntryPoint
 import ir.millennium.sampleProject.R
 import ir.millennium.sampleProject.core.ui.BaseFragment
 import ir.millennium.sampleProject.core.utils.GridSpacingItemDecoration
-import ir.millennium.sampleProject.data.model.local.aboutMe.UserProfileEntity
-import ir.millennium.sampleProject.data.model.local.aboutMe.UserProfileSocialNetworkEntity
 import ir.millennium.sampleProject.databinding.FragmentAboutMeBinding
 import ir.millennium.sampleProject.presentation.activity.mainActivity.MainActivity
 import ir.millennium.sampleProject.presentation.adapter.UserProfileSocialNetworkAdapter
 import ir.millennium.sampleProject.presentation.navigationManager.MainNavigationManager
+import ir.millennium.sampleProject.presentation.utils.Constants.USER_PROFILE_DATA
 import ir.millennium.sampleProject.presentation.utils.convertDpToPx
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter
 import kotlinx.coroutines.launch
@@ -30,8 +29,6 @@ import ru.santaev.outlinespan.OutlineSpan
 class AboutMeFragment : BaseFragment<FragmentAboutMeBinding>() {
 
     private val mainNavigationManager by lazy { MainNavigationManager(activity as MainActivity) }
-
-    private lateinit var userProfileData: UserProfileEntity
 
     private lateinit var userProfileSocialNetworkAdapter: UserProfileSocialNetworkAdapter
 
@@ -44,7 +41,7 @@ class AboutMeFragment : BaseFragment<FragmentAboutMeBinding>() {
         initTextView()
         initButton()
         initRecyclerView()
-        provideData()
+        setData()
     }
 
     private fun initTextView() {
@@ -63,51 +60,9 @@ class AboutMeFragment : BaseFragment<FragmentAboutMeBinding>() {
         }
     }
 
-    private fun provideData() {
-        userProfileData = UserProfileEntity(
-            image = R.mipmap.image_user,
-            fullName = R.string.full_name,
-            socialNetwork = ArrayList<UserProfileSocialNetworkEntity>().apply {
-                add(
-                    UserProfileSocialNetworkEntity(
-                        title = R.string.github,
-                        link = R.string.link_github
-                    )
-                )
-                add(
-                    UserProfileSocialNetworkEntity(
-                        title = R.string.gitlab,
-                        link = R.string.link_gitlab
-                    )
-                )
-                add(
-                    UserProfileSocialNetworkEntity(
-                        title = R.string.linkedin,
-                        link = R.string.link_inkedin
-                    )
-                )
-                add(
-                    UserProfileSocialNetworkEntity(
-                        title = R.string.telegram,
-                        link = R.string.link_telegram
-                    )
-                )
-                add(
-                    UserProfileSocialNetworkEntity(
-                        title = R.string.whatsapp,
-                        link = R.string.link_whatsapp
-                    )
-                )
-                add(
-                    UserProfileSocialNetworkEntity(
-                        title = R.string.instagram,
-                        link = R.string.link_instagram
-                    )
-                )
-            })
-
+    private fun setData(){
         viewLifecycleOwner.lifecycleScope.launch {
-            userProfileSocialNetworkAdapter.submitList(userProfileData.socialNetwork)
+            userProfileSocialNetworkAdapter.submitList(USER_PROFILE_DATA.socialNetwork)
         }
     }
 

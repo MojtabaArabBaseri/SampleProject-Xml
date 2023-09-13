@@ -98,7 +98,7 @@ class NewsListFragment : BaseFragment<FragmentNewslistBinding>(),
     }
 
     private fun getData() {
-        viewModel.getNews()
+        viewModel.getNews(viewModel.params)
     }
 
     private fun renderUi(dataResource: UiState) = with(binding) {

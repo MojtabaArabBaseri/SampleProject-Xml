@@ -37,7 +37,6 @@ class SplashFragment : BaseFragment<FragmentSplashBinding>() {
     private fun navToMainActivity() {
         viewLifecycleOwner.lifecycleScope.launch {
             delay(SPLASH_DISPLAY_LENGTH.toLong())
-            sharedPreferencesManager.setStatusLoginUser(true)
             startActivity(Intent(requireActivity(), MainActivity::class.java))
             requireActivity().overridePendingTransition(
                 android.R.anim.fade_in,

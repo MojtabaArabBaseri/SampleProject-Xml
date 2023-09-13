@@ -5,9 +5,9 @@ import ir.millennium.sampleProject.data.repository.remote.RemoteRepositoryImpl
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
-class GetNewsUseCase @Inject constructor(private val remoteRepository: RemoteRepositoryImpl) {
+open class GetNewsUseCase @Inject constructor(private val remoteRepository: RemoteRepositoryImpl) {
 
-    fun getNews(params: MutableMap<String, Any>): Flow<ResponseNewsModel> {
+    open fun getNews(params: MutableMap<String, Any>): Flow<ResponseNewsModel> {
         return remoteRepository.getNews(params)
     }
 }
