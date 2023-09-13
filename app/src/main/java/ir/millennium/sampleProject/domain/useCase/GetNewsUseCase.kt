@@ -7,7 +7,7 @@ import javax.inject.Inject
 
 open class GetNewsUseCase @Inject constructor(private val remoteRepository: RemoteRepositoryImpl) {
 
-    fun getNews(params: MutableMap<String, Any>): Flow<ResponseNewsModel> {
+    open fun getNews(params: MutableMap<String, Any>): Flow<ResponseNewsModel> {
         return remoteRepository.getNews(params)
     }
 }

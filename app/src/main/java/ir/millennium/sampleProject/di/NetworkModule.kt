@@ -19,7 +19,7 @@ import ir.millennium.sampleProject.di.qualifiers.RetrofitCaching
 import ir.millennium.sampleProject.presentation.utils.Constants
 import ir.millennium.sampleProject.presentation.utils.Constants.HEADER_CACHE_CONTROL
 import ir.millennium.sampleProject.presentation.utils.Constants.HEADER_PRAGMA
-import ir.millennium.sampleProject.presentation.utils.Constants.cacheSizeForRetrofit
+import ir.millennium.sampleProject.presentation.utils.Constants.CACHE_SIZE_FOR_RETROFIT
 import okhttp3.Cache
 import okhttp3.CacheControl
 import okhttp3.Interceptor
@@ -220,7 +220,7 @@ object NetworkModule {
     @Provides
     @Singleton
     fun provideCache(@ApplicationContext context: Context): Cache =
-        Cache(File(context.cacheDir, "SamatCache"), cacheSizeForRetrofit)
+        Cache(File(context.cacheDir, "SamatCache"), CACHE_SIZE_FOR_RETROFIT)
 
     @Singleton
     @Provides

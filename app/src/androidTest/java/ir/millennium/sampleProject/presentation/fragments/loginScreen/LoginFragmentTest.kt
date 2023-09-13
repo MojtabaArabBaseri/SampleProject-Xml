@@ -13,7 +13,6 @@ import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.junit.jupiter.api.DisplayName
 import org.junit.runner.RunWith
 
 @ExperimentalCoroutinesApi
@@ -34,8 +33,7 @@ class LoginFragmentTest {
     }
 
     @Test
-    @DisplayName("empty user name")
-    fun emptyUserName() {
+    fun validateFields_emptyUsername_expectedFalse() {
         val userName = ""
         val password = "123456"
 
@@ -46,8 +44,7 @@ class LoginFragmentTest {
     }
 
     @Test
-    @DisplayName("empty password")
-    fun emptyPassword() {
+    fun validateFields_emptyPassword_expectedFalse() {
         val userName = "mojtaba"
         val password = ""
 
@@ -58,10 +55,9 @@ class LoginFragmentTest {
     }
 
     @Test
-    @DisplayName("empty username and password")
-    fun emptyUserNameAndPassword() {
+    fun validateFields_emptyUsernameAndPassword_expectedFalse() {
         val userName = ""
-        val password = "123456"
+        val password = ""
 
         launchFragmentInHiltContainer<LoginFragment> {
             val actual = checkFieldForValidation(userName, password)
@@ -70,8 +66,7 @@ class LoginFragmentTest {
     }
 
     @Test
-    @DisplayName("correct type username and password")
-    fun correctTypeUsernameAndPassword() {
+    fun validateFields_correctTypeUsernameAndPassword_expectedTrue() {
         val userName = "username"
         val password = "123456"
 
@@ -82,8 +77,7 @@ class LoginFragmentTest {
     }
 
     @Test
-    @DisplayName("correct username and password")
-    fun correctUsernameAndPassword() {
+    fun validationUsernameAndPassword_correctBoth_expectedTrue() {
         val userName = USER_NAME
         val password = PASSWORD
 
@@ -94,8 +88,7 @@ class LoginFragmentTest {
     }
 
     @Test
-    @DisplayName("inCorrect username and password")
-    fun inCorrectUsernameAndPassword() {
+    fun validationUsernameAndPassword_incorrectBoth_expectedFalse() {
         val userName = "ali"
         val password = "147852"
 

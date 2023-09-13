@@ -6,8 +6,6 @@ import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.view.View
-import android.widget.ArrayAdapter
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.google.android.material.snackbar.BaseTransientBottomBar
 import com.google.android.material.snackbar.Snackbar
@@ -31,10 +29,6 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 open class LoginFragment : BaseFragment<FragmentLoginBinding>() {
-
-    private lateinit var adapterUniversity: ArrayAdapter<*>
-
-    private val viewModel: LoginFragmentViewModel by viewModels()
 
     private val language by lazy { sharedPreferencesManager.getLanguageApp() }
 
@@ -99,8 +93,8 @@ open class LoginFragment : BaseFragment<FragmentLoginBinding>() {
     private fun initLayout() = with(binding) {
         cvLogin.setOnClickListener {
             if (checkFieldForValidation(
-                    tilUsername.editText?.text.toString().trim { it <= ' ' },
-                    tilPassword.editText?.text.toString().trim { it <= ' ' }
+                    tilUsername.editText?.text.toString().trim(),
+                    tilPassword.editText?.text.toString().trim()
                 )
             ) {
                 if (checkAuthentication(
@@ -125,27 +119,30 @@ open class LoginFragment : BaseFragment<FragmentLoginBinding>() {
         }
     }
 
-    fun checkFieldForValidation(userName: String, password: String): Boolean {
-        var statusValidation = true
+    fun checkFieldForValidation(userName: String, password: String) = when {
 
-        if (userName.isEmpty()) {
+        userName.isEmpty() -> {
             binding.tilUsername.error = resources.getString(R.string.please_enter_user_name)
-            statusValidation = false
+            false
         }
 
-        if (password.isEmpty()) {
+        password.isEmpty() -> {
             binding.tilPassword.error = resources.getString(R.string.please_enter_password)
-            statusValidation = false
+            false
         }
 
-        return statusValidation
+        else -> {
+            true
+        }
     }
 
-    fun checkAuthentication(userName: String, password: String): Boolean {
+    fun checkAuthentication(userName: String, password: String) = when {
 
-        return if (userName == USER_NAME && password == PASSWORD) {
+        (userName == USER_NAME && password == PASSWORD) -> {
             true
-        } else {
+        }
+
+        else -> {
             Snackbar.make(
                 binding.clMain,
                 R.string.message_when_username_password_incorrect,

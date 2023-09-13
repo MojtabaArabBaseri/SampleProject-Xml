@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.onStart
 import javax.inject.Inject
 
 @HiltViewModel
-class NewsFragmentViewModel @Inject constructor(
+open class NewsFragmentViewModel @Inject constructor(
     private val getNewsUseCase: GetNewsUseCase
 ) : ViewModel() {
 
@@ -26,11 +26,10 @@ class NewsFragmentViewModel @Inject constructor(
     val dataResource = MutableStateFlow<UiState>(UiState.Initialization)
 
     private var _currentPage = 1
-
     val currentPage
         get() = _currentPage
 
-    private val params = mutableMapOf<String, Any>()
+    val params = mutableMapOf<String, Any>()
 
     init {
         params["apiKey"] = API_KEY
@@ -39,7 +38,8 @@ class NewsFragmentViewModel @Inject constructor(
         params["page"] = _currentPage
     }
 
-    fun getNews() {
+    fun getNews(params: MutableMap<String, Any>) {
+
         params.replace("page", _currentPage)
 
         getNewsUseCase.getNews(params)
@@ -59,11 +59,11 @@ class NewsFragmentViewModel @Inject constructor(
     fun refresh() {
         _currentPage = 1
         allNews.clear()
-        getNews()
+        getNews(params)
     }
 
     fun getNextPage() {
         _currentPage++
-//        getNews()
+        getNews(params)
     }
 }
