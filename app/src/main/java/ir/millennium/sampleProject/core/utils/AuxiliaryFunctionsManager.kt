@@ -10,7 +10,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class AuxiliaryFunctionsManager @Inject constructor() {
+open class AuxiliaryFunctionsManager @Inject constructor() {
 
     fun getTypefaceNameApp(context: Context?): Typeface {
         return Typeface.createFromAsset(context!!.assets, "fonts/IranSans_Bold.ttf")
@@ -74,7 +74,7 @@ class AuxiliaryFunctionsManager @Inject constructor() {
         return builder.toString()
     }
 
-    fun isNetworkConnected(context: Context): Boolean {
+    open fun isNetworkConnected(context: Context): Boolean {
         val cm =
             context.getSystemService(MultiDexApplication.CONNECTIVITY_SERVICE) as ConnectivityManager
         return cm.activeNetworkInfo != null

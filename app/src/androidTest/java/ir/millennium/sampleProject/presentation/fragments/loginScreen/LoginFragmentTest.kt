@@ -77,24 +77,46 @@ class LoginFragmentTest {
     }
 
     @Test
-    fun validationUsernameAndPassword_correctBoth_expectedTrue() {
-        val userName = USER_NAME
+    fun validation_incorrectUserame_expectedFalse() {
+        val userName = "ali"
         val password = PASSWORD
 
         launchFragmentInHiltContainer<LoginFragment> {
             val actual = checkAuthentication(userName, password)
-            assertTrue(actual)
+            assertFalse(actual)
         }
     }
 
     @Test
-    fun validationUsernameAndPassword_incorrectBoth_expectedFalse() {
+    fun validation_incorrectPassword_expectedFalse() {
+        val userName = USER_NAME
+        val password = "9874521"
+
+        launchFragmentInHiltContainer<LoginFragment> {
+            val actual = checkAuthentication(userName, password)
+            assertFalse(actual)
+        }
+    }
+
+    @Test
+    fun validation_incorrectBoth_expectedFalse() {
         val userName = "ali"
         val password = "147852"
 
         launchFragmentInHiltContainer<LoginFragment> {
             val actual = checkAuthentication(userName, password)
             assertFalse(actual)
+        }
+    }
+
+    @Test
+    fun validation_correctBoth_expectedTrue() {
+        val userName = USER_NAME
+        val password = PASSWORD
+
+        launchFragmentInHiltContainer<LoginFragment> {
+            val actual = checkAuthentication(userName, password)
+            assertTrue(actual)
         }
     }
 }

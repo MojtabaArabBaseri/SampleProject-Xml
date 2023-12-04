@@ -19,10 +19,6 @@ class StartActivity : BaseActivity() {
 
     private val navController: NavController by lazy { findNavController(R.id.navHostStartFragment) }
 
-    private val startDestinations = mapOf(
-        R.id.loginFragment to R.id.loginFragment
-    )
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
