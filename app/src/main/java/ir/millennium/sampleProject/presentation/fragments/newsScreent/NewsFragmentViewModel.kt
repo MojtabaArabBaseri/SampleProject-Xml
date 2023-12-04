@@ -18,7 +18,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 open class NewsFragmentViewModel @Inject constructor(
-    private val getNewsUseCase: GetNewsUseCase
+    val getNewsUseCase: GetNewsUseCase
 ) : ViewModel() {
 
     private var allNews = emptyList<NewsItem>().toMutableList()
@@ -54,6 +54,7 @@ open class NewsFragmentViewModel @Inject constructor(
             .catch { throwable ->
                 dataResource.value = UiState.Error(throwable)
             }.launchIn(viewModelScope)
+
     }
 
     fun refresh() {

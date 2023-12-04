@@ -14,6 +14,8 @@ import androidx.annotation.AttrRes
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.widget.NestedScrollView
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
 import androidx.viewpager2.widget.ViewPager2
@@ -21,6 +23,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.google.android.material.appbar.AppBarLayout
 import ir.millennium.sampleProject.core.utils.AppGlideExtensions
+import kotlinx.coroutines.CoroutineScope
 import kotlin.math.roundToInt
 
 fun Context?.showToast(text: CharSequence, duration: Int = Toast.LENGTH_LONG) =
@@ -194,3 +197,6 @@ fun AppBarLayout.expand() {
 fun AppBarLayout.collapse() {
     setExpanded(false, true)
 }
+
+fun ViewModel.getViewModelScope(coroutineScope: CoroutineScope?) =
+    coroutineScope ?: this.viewModelScope

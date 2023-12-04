@@ -1,5 +1,6 @@
 package ir.millennium.sampleProject.presentation.activity.mainActivity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ProgressBar
@@ -71,7 +72,7 @@ class MainActivity : BaseActivity(), MainHelper {
                     pbLoading: ProgressBar, lblOk: TextView, alertDialog: AlertDialog
                 ) {
                     alertDialog.dismiss()
-                    if (sharedPreferencesManager.getLanguageApp().equals("en"))
+                    if (sharedPreferencesManager.getLanguageApp() == "en")
                         sharedPreferencesManager.setLanguageApp("fa")
                     else
                         sharedPreferencesManager.setLanguageApp("en")
@@ -126,6 +127,7 @@ class MainActivity : BaseActivity(), MainHelper {
         mainNavigationManager.supportNavigateUpTo()
     }
 
+    @SuppressLint("MissingSuperCall")
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         mainNavigationManager.onBackPressed()

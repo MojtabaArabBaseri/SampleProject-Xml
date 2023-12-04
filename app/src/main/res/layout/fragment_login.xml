@@ -140,8 +140,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:gravity="center"
-                        android:textColor="@color/colorPrimaryText"
                         android:text="@string/login"
+                        android:textColor="@color/colorPrimaryText"
                         android:textSize="@dimen/size_font_title3" />
 
                     <com.google.android.material.progressindicator.CircularProgressIndicator
