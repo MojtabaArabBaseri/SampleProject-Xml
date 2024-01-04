@@ -5,7 +5,6 @@ import android.view.View
 import android.view.animation.OvershootInterpolator
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,11 +17,9 @@ import ir.millennium.sampleProject.data.model.remote.NewsItem
 import ir.millennium.sampleProject.databinding.FragmentNewslistBinding
 import ir.millennium.sampleProject.presentation.adapter.OnItemClickListener
 import ir.millennium.sampleProject.presentation.adapter.RcvNewsListAdapter
-import ir.millennium.sampleProject.presentation.utils.Constants.SPLASH_DISPLAY_LENGTH
 import ir.millennium.sampleProject.presentation.utils.convertDpToPx
 import jp.wasabeef.recyclerview.adapters.AlphaInAnimationAdapter
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -56,6 +53,7 @@ class NewsListFragment : BaseFragment<FragmentNewslistBinding>(),
 
     private fun initSwapRefreshing() {
         binding.refreshData.setOnRefreshListener(this@NewsListFragment)
+        binding.refreshData.setProgressViewOffset(true, 0, convertDpToPx(70))
     }
 
     private fun initRcvNews() {
@@ -101,7 +99,7 @@ class NewsListFragment : BaseFragment<FragmentNewslistBinding>(),
         viewModel.getNews(viewModel.params)
     }
 
-    private fun renderUi(dataResource: UiState) = with(binding) {
+    private fun renderUi(dataResource: UiState) {
         when (dataResource) {
             is UiState.Loading -> {
                 showLoadingMore()
@@ -122,7 +120,6 @@ class NewsListFragment : BaseFragment<FragmentNewslistBinding>(),
 
     private fun showLoadingMore() {
         if (viewModel.currentPage == 1) {
-//            binding.refreshData.isEnabled = true
             binding.refreshData.isRefreshing = true
         } else {
             rcvNewsListAdapter.setLoadingState(true)
@@ -131,9 +128,7 @@ class NewsListFragment : BaseFragment<FragmentNewslistBinding>(),
 
     private fun hideLoading() {
         viewLifecycleOwner.lifecycleScope.launch(Dispatchers.Main) {
-//            delay(1000)
             if (viewModel.currentPage == 1) {
-//                binding.refreshData.isEnabled = false
                 binding.refreshData.isRefreshing = false
             } else {
                 rcvNewsListAdapter.setLoadingState(false)
@@ -144,13 +139,6 @@ class NewsListFragment : BaseFragment<FragmentNewslistBinding>(),
     override fun onScrollToTop() {
         binding.apply {
             rcvNews.smoothScrollToPosition(0)
-        }
-    }
-
-    private fun navToLoginFragment() = with(binding) {
-        lifecycleScope.launch {
-            delay(SPLASH_DISPLAY_LENGTH.toLong())
-            root.findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
         }
     }
 

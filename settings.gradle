@@ -2,7 +2,6 @@ pluginManagement {
     repositories {
         gradlePluginPortal()
         google()
-        jcenter()
         mavenCentral()
 
     }
@@ -12,6 +11,7 @@ dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
 
     repositories {
+        gradlePluginPortal()
         google()
         jcenter()
         mavenCentral()
@@ -24,7 +24,6 @@ dependencyResolutionManagement {
             name 'OSS-Sonatype'
         }
         maven { url "https://oss.sonatype.org/content/repositories/snapshots/" }
-        maven { url "https://maven.neshan.org/artifactory/public-maven" }
     }
 }
 rootProject.name = "SampleProject"

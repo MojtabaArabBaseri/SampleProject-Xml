@@ -56,7 +56,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:minHeight="56dp"
-                android:text="@string/app_name"
+                android:text="@string/title_application"
                 android:textColor="?android:textColorPrimary"
                 android:textSize="@dimen/size_font_title1"
                 app:layout_constraintBottom_toBottomOf="parent"

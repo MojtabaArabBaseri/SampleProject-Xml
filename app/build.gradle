@@ -9,14 +9,15 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 android {
-    compileSdk 33
-    buildToolsVersion '30.0.3'
+    namespace 'ir.millennium.sampleProject'
+    compileSdk 34
+//    buildToolsVersion '30.0.3'
 
     defaultConfig {
         applicationId "ir.millennium.sampleProject"
 
         minSdk 21
-        targetSdk 33
+        targetSdk 34
         versionCode 1
         versionName "1.0.0"
 
@@ -76,18 +77,12 @@ android {
 
 dependencies {
 //    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
-    implementation 'com.android.support:appcompat-v7:33.0.0'
     implementation 'com.android.support.constraint:constraint-layout:2.0.4'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'com.android.support:design:33.0.0'
-    implementation 'com.android.support:cardview-v7:33.0.0'
     implementation 'io.github.inflationx:calligraphy3:3.1.1'
     implementation 'io.github.inflationx:viewpump:2.0.3'
-    implementation 'com.android.support:support-v4:33.0.0'
     implementation 'com.nineoldandroids:library:2.4.0'
-    implementation 'com.android.support:support-compat:33.0.0'
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'com.android.support:support-vector-drawable:33.0.0'
     implementation 'org.greenrobot:essentials:3.0.0-RC1'
     implementation 'de.greenrobot:java-common:2.3.1'
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
@@ -150,16 +145,17 @@ dependencies {
 
     implementation 'com.android.databinding:viewbinding:8.1.0'
 
-    def room_version = "2.5.2"
+    def room_version = "2.6.0"
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
 
     //Hilt
-    implementation "com.google.dagger:hilt-android:2.44"
-    kapt "com.google.dagger:hilt-compiler:2.44"
-    androidTestImplementation "com.google.dagger:hilt-android-testing:2.46.1"
-    kaptAndroidTest "com.google.dagger:hilt-android-compiler:2.46.1"
+    def hilt_version = "2.48.1"
+    implementation "com.google.dagger:hilt-android:$hilt_version"
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
+    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
+    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     def glide_version = "4.12.0"
     implementation "com.github.bumptech.glide:glide:$glide_version"
@@ -190,5 +186,4 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
     androidTestImplementation "org.mockito:mockito-core:3.10.0"
     androidTestImplementation 'app.cash.turbine:turbine:1.0.0'
-    implementation 'com.github.halleywallet:HalleyPaySDKAndroid:v3.2'
 }
