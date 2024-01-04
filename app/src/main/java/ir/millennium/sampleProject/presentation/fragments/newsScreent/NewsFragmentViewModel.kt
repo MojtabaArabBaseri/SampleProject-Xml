@@ -24,8 +24,8 @@ open class NewsFragmentViewModel @Inject constructor(
 
     private var allNews = emptyList<NewsItem>().toMutableList()
 
-    private val _dataResource = MutableStateFlow<UiState>(UiState.Initialization)
-    val dataResource: StateFlow<UiState> = _dataResource
+    private val _uiState = MutableStateFlow<UiState>(UiState.Initialization)
+    val uiState: StateFlow<UiState> = _uiState
 
     private var _currentPage = 1
     val currentPage
@@ -48,13 +48,13 @@ open class NewsFragmentViewModel @Inject constructor(
             .flowOn(Dispatchers.IO)
             .map { newsList ->
                 newsList.articles?.let { allNews.addAll(it) }
-                _dataResource.value = UiState.Success(allNews)
+                _uiState.value = UiState.Success(allNews)
             }
             .onStart {
-                _dataResource.value = UiState.Loading
+                _uiState.value = UiState.Loading
             }
             .catch { throwable ->
-                _dataResource.value = UiState.Error(throwable)
+                _uiState.value = UiState.Error(throwable)
             }.launchIn(viewModelScope)
 
     }

@@ -89,7 +89,7 @@ class NewsListFragment : BaseFragment<FragmentNewslistBinding>(),
 
     private fun setupViewModel() {
         viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.dataResource.collect { dataResource ->
+            viewModel.uiState.collect { dataResource ->
                 renderUi(dataResource)
             }
         }
@@ -99,15 +99,15 @@ class NewsListFragment : BaseFragment<FragmentNewslistBinding>(),
         viewModel.getNews(viewModel.params)
     }
 
-    private fun renderUi(dataResource: UiState) {
-        when (dataResource) {
+    private fun renderUi(uiState: UiState) {
+        when (uiState) {
             is UiState.Loading -> {
                 showLoadingMore()
             }
 
             is UiState.Success -> {
                 hideLoading()
-                rcvNewsListAdapter.submitList((dataResource.data as List<NewsItem>))
+                rcvNewsListAdapter.submitList((uiState.data as List<NewsItem>))
             }
 
             is UiState.Error -> {

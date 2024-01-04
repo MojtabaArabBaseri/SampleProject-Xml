@@ -60,7 +60,7 @@ class NewsFragmentViewModelTest {
 
         val testResults = mutableListOf<UiState>()
         val job = launch {
-            viewModel.dataResource.collect {
+            viewModel.uiState.collect {
                 testResults.add(it)
                 if ((it is UiState.Success) or (it is UiState.Error)) {
                     cancel()
@@ -82,7 +82,7 @@ class NewsFragmentViewModelTest {
 
         val testResults = mutableListOf<UiState>()
         val job = launch {
-            viewModel.dataResource.collect {
+            viewModel.uiState.collect {
                 testResults.add(it)
                 if ((it is UiState.Success) or (it is UiState.Error)) {
                     cancel()
